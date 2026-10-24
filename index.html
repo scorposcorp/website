@@ -20,7 +20,17 @@
  
  <link href="Css/SCS.css" rel="stylesheet" type="text/css" />
 
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+ <!-- <script src="path/to/ruffle.js"></script> -->
+
+ <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "autoplay": "on",        // Forces the SWF file to play immediately
+        "unmuteOverlay": "hidden" // Hides any blocking unmute overlay prompts
+    };
+  </script>
   
 </head>
 
@@ -253,7 +263,7 @@
       player.style.width = '100%';
       player.style.height = 'min(72vh, 650px)';
       host.appendChild(player);
-      player.load({ url: 'Images/Scorpos940.swf', autoplay: 'on', unmuteOverlay: 'visible' });
+      player.load({ url: 'Images/Scorpos940.swf', autoplay: 'on', unmuteOverlay: 'hidden' });
     })();
   </script>
   

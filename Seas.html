@@ -4,6 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Scorpos Corporate Services</title>
 <link href="Css/SCS.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "autoplay": "on",        // Forces the SWF file to play immediately
+        "unmuteOverlay": "hidden" // Hides any blocking unmute overlay prompts
+    };
+  </script>
+
 </head>
 
 <body>
@@ -368,5 +378,20 @@ class="btnMainText" href="Contactus.html">Contact Us</a></td>
 	</td>
   </tr>
 </table>
+  <script>
+    (function () {
+      const host = document.getElementById('player');
+      if (!window.RufflePlayer) {
+        host.textContent = 'Ruffle could not load. Check your internet connection or browser content blockers.';
+        return;
+      }
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      player.style.width = '100%';
+      player.style.height = 'min(72vh, 650px)';
+      host.appendChild(player);
+      player.load({ url: 'Images/SeasERP_fla.swf', autoplay: 'on', unmuteOverlay: 'hidden' });
+    })();
+  </script>
 </body>
 </html>
